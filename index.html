@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101828">
+<title>KEYPHONE | Administración de créditos</title>
+<style>
+:root{--navy:#101828;--navy2:#182230;--blue:#2563eb;--cyan:#06b6d4;--bg:#f3f6fb;--card:#fff;--text:#172033;--muted:#667085;--line:#e4e9f1;--green:#067647;--red:#b42318;--amber:#b54708}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
+button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:10px 13px;font-weight:650}
+.app{min-height:100vh;display:grid;grid-template-columns:250px 1fr}.sidebar{background:var(--navy);color:#fff;padding:22px 16px;display:flex;flex-direction:column;gap:22px}.brand{display:flex;align-items:center;gap:11px;padding:4px 8px}.brand-mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--cyan),var(--blue));display:grid;place-items:center;font-weight:900;font-size:20px}.brand strong{font-size:18px;letter-spacing:1.4px}.brand small{display:block;color:#98a2b3;font-size:11px;margin-top:2px}.nav{display:grid;gap:7px}.nav button{background:transparent;color:#cbd5e1;text-align:left;padding:12px;border-radius:10px}.nav button.active,.nav button:hover{background:#26364a;color:white}.sidebar-note{margin-top:auto;color:#98a2b3;font-size:12px;line-height:1.5;padding:10px}.main{min-width:0}.topbar{background:#fff;border-bottom:1px solid var(--line);padding:17px 26px;display:flex;justify-content:space-between;align-items:center;gap:12px}.topbar h1{font-size:21px;margin:0}.topbar p{margin:4px 0 0;color:var(--muted);font-size:13px}.top-actions{display:flex;gap:8px;align-items:center}.badge{font-size:12px;border-radius:999px;padding:6px 9px;background:#ecfdf3;color:var(--green);font-weight:700}.content{padding:24px;max-width:1500px;margin:auto}.page{display:none}.page.active{display:block}.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}.section-head h2{margin:0;font-size:19px}.section-head p{margin:5px 0 0;color:var(--muted);font-size:13px}.primary{background:var(--blue);color:#fff}.secondary{background:#eaf0ff;color:#1d4ed8}.danger{background:#fee4e2;color:var(--red)}.neutral{background:#eef2f6;color:#344054}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:20px}.stat{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:18px}.stat .label{font-size:12px;color:var(--muted)}.stat .value{font-size:25px;font-weight:800;margin-top:9px;letter-spacing:-.6px}.stat .foot{font-size:12px;color:var(--muted);margin-top:6px}.panel{background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px;margin-bottom:18px}.panel h3{margin:0 0 14px;font-size:15px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px;background:#fff}table{width:100%;border-collapse:collapse;min-width:760px}th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);font-size:13px;vertical-align:middle}th{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);background:#f9fafb}tr:last-child td{border-bottom:0}.muted{color:var(--muted)}.pill{display:inline-block;border-radius:999px;padding:5px 8px;font-size:11px;font-weight:750;white-space:nowrap}.pill.green{background:#dcfae6;color:#067647}.pill.red{background:#fee4e2;color:#b42318}.pill.amber{background:#fef0c7;color:#93370d}.pill.blue{background:#dbeafe;color:#1d4ed8}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:14px}.toolbar input,.toolbar select{max-width:100%;min-width:160px}.field{display:grid;gap:6px;margin-bottom:13px}.field label{font-size:12px;font-weight:700;color:#344054}.field input,.field select,.field textarea,.toolbar input,.toolbar select{width:100%;border:1px solid #d0d5dd;background:#fff;border-radius:9px;padding:10px 11px;outline:none}.field input:focus,.field select:focus,.toolbar input:focus{border-color:#84adff;box-shadow:0 0 0 3px #dbeafe}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}.form-grid .full{grid-column:1/-1}.modal{position:fixed;inset:0;background:#10182899;display:none;align-items:center;justify-content:center;padding:16px;z-index:10}.modal.open{display:flex}.modal-box{background:white;width:min(680px,100%);max-height:92vh;overflow:auto;border-radius:17px;padding:22px;box-shadow:0 24px 80px #0003}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}.modal-head h2{font-size:19px;margin:0}.close{background:#f2f4f7;color:#344054;font-size:20px;padding:4px 10px}.form-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}.empty{text-align:center;padding:30px;color:var(--muted)}.notice{padding:12px 14px;border-radius:11px;background:#fffaeb;color:#93370d;border:1px solid #fedf89;font-size:12px;line-height:1.5;margin-bottom:16px}.notice.blue-note{background:#eff8ff;border-color:#b2ddff;color:#175cd3}.row-actions{display:flex;gap:6px;flex-wrap:wrap}.row-actions button{padding:7px 9px;font-size:11px}.footer-note{font-size:12px;color:var(--muted);line-height:1.5;margin-top:16px}.hidden{display:none!important}
+@media(max-width:950px){.app{grid-template-columns:1fr}.sidebar{padding:12px;gap:12px}.brand{padding:4px}.nav{display:flex;overflow:auto}.nav button{white-space:nowrap;font-size:12px;padding:10px}.sidebar-note{display:none}.topbar{padding:15px 17px}.content{padding:16px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.topbar h1{font-size:18px}.top-actions .badge{display:none}.stats{gap:9px}.stat{padding:13px}.stat .value{font-size:21px}.section-head{align-items:flex-start;flex-direction:column}.form-grid{grid-template-columns:1fr}.form-grid .full{grid-column:auto}.content{padding:12px}.panel{padding:13px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="brand-mark">K</div><div><strong>KEYPHONE</strong><small>CONTROL DE CRÉDITOS</small></div></div>
+  <nav class="nav">
+    <button class="active" data-page="dashboard">▦ &nbsp; Resumen</button>
+    <button data-page="clients">♙ &nbsp; Clientes</button>
+    <button data-page="devices">▣ &nbsp; Dispositivos</button>
+    <button data-page="credits">▤ &nbsp; Créditos</button>
+    <button data-page="payments">＄ &nbsp; Pagos</button>
+    <button data-page="restrictions">⌑ &nbsp; Gestión de acceso</button>
+    <button data-page="backup">⚙ &nbsp; Datos y respaldo</button>
+  </nav>
+  <div class="sidebar-note">Versión inicial de demostración.<br>Los datos se guardan en este navegador.</div>
+</aside>
+<main class="main">
+<header class="topbar"><div><h1 id="pageTitle">Resumen general</h1><p id="todayLine">Controla tus créditos desde un solo lugar.</p></div><div class="top-actions"><span class="badge">● Sistema local</span><button class="primary" onclick="openModal('paymentModal')">＋ Registrar pago</button></div></header>
+<div class="content">
+<section class="page active" id="dashboard">
+  <div class="stats">
+    <div class="stat"><div class="label">Clientes registrados</div><div class="value" id="statClients">0</div><div class="foot">Expedientes en el sistema</div></div>
+    <div class="stat"><div class="label">Dispositivos registrados</div><div class="value" id="statDevices">0</div><div class="foot">Equipos asociados a créditos</div></div>
+    <div class="stat"><div class="label">Saldo pendiente</div><div class="value" id="statBalance">$0</div><div class="foot">Saldo financiado por cobrar</div></div>
+    <div class="stat"><div class="label">Pagos recibidos</div><div class="value" id="statCollected">$0</div><div class="foot">Total registrado en el sistema</div></div>
+  </div>
+  <div class="notice"><b>Importante:</b> esta versión es un prototipo administrativo. Los estados “Restringido” y “Activo” son registros internos y no bloquean ni desbloquean físicamente un teléfono. Para control real del dispositivo se necesita una solución de financiación Android compatible y autorizada.</div>
+  <div class="panel"><h3>Actividad reciente de pagos</h3><div id="recentPayments"></div></div>
+  <div class="panel"><h3>Créditos que requieren atención</h3><div id="attentionCredits"></div></div>
+</section>
+<section class="page" id="clients">
+  <div class="section-head"><div><h2>Clientes</h2><p>Administra los datos de contacto de tus clientes.</p></div><button class="primary" onclick="openModal('clientModal')">＋ Nuevo cliente</button></div>
+  <div class="toolbar"><input id="clientSearch" placeholder="Buscar por nombre o teléfono…" oninput="renderClients()"></div><div id="clientsTable"></div>
+</section>
+<section class="page" id="devices">
+  <div class="section-head"><div><h2>Dispositivos</h2><p>Registro de teléfonos asociados a las ventas a crédito.</p></div><button class="primary" onclick="openModal('deviceModal')">＋ Nuevo dispositivo</button></div>
+  <div class="toolbar"><input id="deviceSearch" placeholder="Buscar IMEI, modelo o cliente…" oninput="renderDevices()"><select id="deviceStatusFilter" onchange="renderDevices()"><option value="">Todos los estados</option><option>Activo</option><option>Restringido (registro)</option><option>Pendiente de revisión</option></select></div><div id="devicesTable"></div>
+</section>
+<section class="page" id="credits">
+  <div class="section-head"><div><h2>Créditos</h2><p>Configura enganches, saldos y frecuencias de pago.</p></div><button class="primary" onclick="openModal('creditModal')">＋ Nuevo crédito</button></div>
+  <div class="toolbar"><input id="creditSearch" placeholder="Buscar cliente o equipo…" oninput="renderCredits()"><select id="creditStatusFilter" onchange="renderCredits()"><option value="">Todos los estados</option><option>Al corriente</option><option>Con atraso</option><option>Liquidado</option></select></div><div id="creditsTable"></div>
+</section>
+<section class="page" id="payments">
+  <div class="section-head"><div><h2>Pagos</h2><p>Registra pagos completos o parciales y consulta los recibos.</p></div><button class="primary" onclick="openModal('paymentModal')">＋ Registrar pago</button></div>
+  <div class="toolbar"><input id="paymentSearch" placeholder="Buscar cliente o referencia…" oninput="renderPayments()"></div><div id="paymentsTable"></div>
+</section>
+<section class="page" id="restrictions">
+  <div class="section-head"><div><h2>Gestión de acceso</h2><p>Control manual del estado administrativo de cada equipo.</p></div></div>
+  <div class="notice"><b>Nota:</b> los botones de esta sección solamente actualizan el registro de KEYPHONE. No envían comandos al teléfono. La restricción real requiere integración con un proveedor autorizado y dispositivos inscritos de forma compatible.</div>
+  <div class="toolbar"><input id="restrictionSearch" placeholder="Buscar cliente, modelo o IMEI…" oninput="renderRestrictions()"></div><div id="restrictionsTable"></div>
+</section>
+<section class="page" id="backup">
+  <div class="section-head"><div><h2>Datos y respaldo</h2><p>Exporta los datos o restaura una copia en este navegador.</p></div></div>
+  <div class="notice">Esta versión guarda los datos localmente en el navegador. No hay sincronización entre celulares ni control de acceso por usuario todavía. No introduzcas datos sensibles reales en esta demostración.</div>
+  <div class="panel"><h3>Exportar respaldo</h3><p class="muted">Descarga clientes, dispositivos, créditos y pagos en un archivo JSON.</p><button class="primary" onclick="exportData()">Descargar respaldo</button></div>
+  <div class="panel"><h3>Importar respaldo</h3><p class="muted">Selecciona un archivo JSON exportado previamente. Esto reemplazará los datos actuales.</p><input type="file" id="importFile" accept=".json,application/json"><div style="margin-top:12px"><button class="secondary" onclick="importData()">Importar respaldo</button></div></div>
+  <div class="panel"><h3>Datos de demostración</h3><p class="muted">Borra todos los registros guardados en este navegador.</p><button class="danger" onclick="clearData()">Borrar todos los datos</button></div>
+  <div class="footer-note">Antes de usarlo comercialmente, hace falta añadir autenticación segura, base de datos en servidor, copias de seguridad automáticas, permisos por usuario y revisión legal/de privacidad.</div>
+</section>
+</div>
+</main>
+</div>
+
+<div class="modal" id="clientModal"><div class="modal-box"><div class="modal-head"><h2>Registrar cliente</h2><button class="close" onclick="closeModal('clientModal')">×</button></div><form id="clientForm"><div class="form-grid">
+<div class="field"><label>Nombre completo *</label><input name="name" required maxlength="120"></div>
+<div class="field"><label>Teléfono *</label><input name="phone" required inputmode="tel" maxlength="25"></div>
+<div class="field"><label>Correo (opcional)</label><input name="email" type="email" maxlength="120"></div>
+<div class="field"><label>Referencia (opcional)</label><input name="reference" maxlength="120"></div>
+<div class="field full"><label>Notas (opcional)</label><textarea name="notes" rows="2" maxlength="500"></textarea></div>
+</div><div class="form-actions"><button type="button" class="neutral" onclick="closeModal('clientModal')">Cancelar</button><button class="primary">Guardar cliente</button></div></form></div></div>
+
+<div class="modal" id="deviceModal"><div class="modal-box"><div class="modal-head"><h2>Registrar dispositivo</h2><button class="close" onclick="closeModal('deviceModal')">×</button></div><form id="deviceForm"><div class="form-grid">
+<div class="field"><label>Cliente *</label><select name="clientId" id="deviceClient" required></select></div>
+<div class="field"><label>Marca *</label><input name="brand" required maxlength="50" placeholder="Samsung, Motorola…"></div>
+<div class="field"><label>Modelo *</label><input name="model" required maxlength="80"></div>
+<div class="field"><label>IMEI (opcional)</label><input name="imei" inputmode="numeric" maxlength="20"></div>
+<div class="field"><label>Número de serie (opcional)</label><input name="serial" maxlength="80"></div>
+<div class="field"><label>Estado administrativo</label><select name="status"><option>Activo</option><option>Pendiente de revisión</option></select></div>
+</div><div class="form-actions"><button type="button" class="neutral" onclick="closeModal('deviceModal')">Cancelar</button><button class="primary">Guardar dispositivo</button></div></form></div></div>
+
+<div class="modal" id="creditModal"><div class="modal-box"><div class="modal-head"><h2>Crear crédito</h2><button class="close" onclick="closeModal('creditModal')">×</button></div><form id="creditForm"><div class="form-grid">
+<div class="field"><label>Cliente *</label><select name="clientId" id="creditClient" required></select></div>
+<div class="field"><label>Dispositivo *</label><select name="deviceId" id="creditDevice" required></select></div>
+<div class="field"><label>Precio de venta (MXN) *</label><input name="price" type="number" min="0.01" step=".01" required></div>
+<div class="field"><label>Enganche (MXN) *</label><input name="down" type="number" min="0" step=".01" value="0" required></div>
+<div class="field"><label>Importe total financiado (MXN) *</label><input name="total" type="number" min="0.01" step=".01" required><small class="muted">Incluye los cargos financieros que hayas acordado, si aplica.</small></div>
+<div class="field"><label>Frecuencia *</label><select name="frequency"><option>Semanal</option><option>Quincenal</option><option>Mensual</option><option>Personalizado</option></select></div>
+<div class="field"><label>Importe por pago (MXN) *</label><input name="installment" type="number" min="0.01" step=".01" required></div>
+<div class="field"><label>Primer vencimiento *</label><input name="firstDue" type="date" required></div>
+<div class="field"><label>Número de pagos *</label><input name="count" type="number" min="1" step="1" required></div>
+<div class="field"><label>Notas / condiciones</label><input name="notes" maxlength="300"></div>
+</div><div class="form-actions"><button type="button" class="neutral" onclick="closeModal('creditModal')">Cancelar</button><button class="primary">Guardar crédito</button></div></form></div></div>
+
+<div class="modal" id="paymentModal"><div class="modal-box"><div class="modal-head"><h2>Registrar pago</h2><button class="close" onclick="closeModal('paymentModal')">×</button></div><form id="paymentForm"><div class="form-grid">
+<div class="field full"><label>Crédito / cliente *</label><select name="creditId" id="paymentCredit" required></select></div>
+<div class="field"><label>Importe recibido (MXN) *</label><input name="amount" type="number" min="0.01" step=".01" required></div>
+<div class="field"><label>Fecha de pago *</label><input name="date" type="date" required></div>
+<div class="field"><label>Método de pago *</label><select name="method"><option>Efectivo</option><option>Transferencia</option><option>Depósito</option><option>Tarjeta</option><option>Otro</option></select></div>
+<div class="field"><label>Referencia (opcional)</label><input name="reference" maxlength="100"></div>
+<div class="field full"><label>Notas (opcional)</label><input name="notes" maxlength="300"></div>
+</div><div class="form-actions"><button type="button" class="neutral" onclick="closeModal('paymentModal')">Cancelar</button><button class="primary">Guardar pago</button></div></form></div></div>
+
+<div class="modal" id="receiptModal"><div class="modal-box"><div class="modal-head"><h2>Comprobante de pago</h2><button class="close" onclick="closeModal('receiptModal')">×</button></div><div id="receiptBody"></div><div class="form-actions"><button class="neutral" onclick="closeModal('receiptModal')">Cerrar</button><button class="primary" onclick="window.print()">Imprimir / Guardar PDF</button></div></div></div>
+
+<script>
+const KEY='keyphone_demo_v1';
+let db=loadDb();
+function emptyDb(){return {clients:[],devices:[],credits:[],payments:[],actions:[]}}
+function loadDb(){try{return JSON.parse(localStorage.getItem(KEY))||emptyDb()}catch(e){return emptyDb()}}
+function saveDb(){localStorage.setItem(KEY,JSON.stringify(db));renderAll()}
+function id(){return Date.now().toString(36)+Math.random().toString(36).slice(2,7)}
+function money(v){return new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',maximumFractionDigits:2}).format(Number(v)||0)}
+function dateNow(){return new Date().toISOString().slice(0,10)}
+function fmtDate(s){if(!s)return '—';const d=new Date(s+'T12:00:00');return d.toLocaleDateString('es-MX',{day:'2-digit',month:'short',year:'numeric'})}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function client(id){return db.clients.find(x=>x.id===id)}
+function device(id){return db.devices.find(x=>x.id===id)}
+function credit(id){return db.credits.find(x=>x.id===id)}
+function paid(cId){return db.payments.filter(p=>p.creditId===cId).reduce((s,p)=>s+Number(p.amount),0)}
+function balance(c){return Math.max(0,Number(c.total)-paid(c.id))}
+function creditState(c){if(balance(c)<=0.009)return 'Liquidado';const due=dueDate(c);return due && due<dateNow()?'Con atraso':'Al corriente'}
+function dueDate(c){if(!c.firstDue)return '';let d=new Date(c.firstDue+'T12:00:00');const ps=db.payments.filter(p=>p.creditId===c.id).length;for(let i=0;i<ps;i++)advanceDate(d,c.frequency);return d.toISOString().slice(0,10)}
+function advanceDate(d,f){if(f==='Semanal')d.setDate(d.getDate()+7);else if(f==='Quincenal')d.setDate(d.getDate()+15);else if(f==='Mensual')d.setMonth(d.getMonth()+1);else d.setDate(d.getDate()+30)}
+function pill(s){let cls=s==='Activo'||s==='Al corriente'||s==='Liquidado'?'green':s==='Con atraso'||s==='Restringido (registro)'?'red':s==='Pendiente de revisión'?'amber':'blue';return `<span class="pill ${cls}">${esc(s)}</span>`}
+function table(headers,rows){if(!rows.length)return '<div class="empty">No hay registros todavía.</div>';return `<div class="table-wrap"><table><thead><tr>${headers.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.join('')}</tbody></table></div>`}
+function setPage(name){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===name));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===name));const labels={dashboard:'Resumen general',clients:'Clientes',devices:'Dispositivos',credits:'Créditos',payments:'Pagos',restrictions:'Gestión de acceso',backup:'Datos y respaldo'};document.getElementById('pageTitle').textContent=labels[name]||'KEYPHONE';}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>setPage(b.dataset.page)));
+document.getElementById('todayLine').textContent=new Date().toLocaleDateString('es-MX',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+function openModal(id){if(id==='deviceModal'||id==='creditModal'||id==='paymentModal')fillSelects();if(id==='paymentModal')document.querySelector('#paymentForm [name=date]').value=dateNow();if(id==='creditModal')document.querySelector('#creditForm [name=firstDue]').value=dateNow();document.getElementById(id).classList.add('open')}
+function closeModal(id){document.getElementById(id).classList.remove('open')}
+document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('open')}));
+function fillSelects(){
+ const cOpts=db.clients.map(c=>`<option value="${c.id}">${esc(c.name)} — ${esc(c.phone)}</option>`).join('');
+ ['deviceClient','creditClient'].forEach(id=>document.getElementById(id).innerHTML=cOpts||'<option value="">Primero registra un cliente</option>');
+ const dOpts=db.devices.map(d=>`<option value="${d.id}">${esc(d.brand)} ${esc(d.model)} — ${esc((client(d.clientId)||{}).name||'Sin cliente')}</option>`).join('');
+ document.getElementById('creditDevice').innerHTML=dOpts||'<option value="">Primero registra un dispositivo</option>';
+ const crOpts=db.credits.filter(c=>balance(c)>0).map(c=>`<option value="${c.id}">${esc((client(c.clientId)||{}).name||'Cliente')} — ${esc((device(c.deviceId)||{}).model||'Equipo')} — saldo ${money(balance(c))}</option>`).join('');
+ document.getElementById('paymentCredit').innerHTML=crOpts||'<option value="">No hay créditos con saldo</option>';
+}
+document.getElementById('clientForm').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);db.clients.push({id:id(),name:f.get('name').trim(),phone:f.get('phone').trim(),email:f.get('email').trim(),reference:f.get('reference').trim(),notes:f.get('notes').trim(),created:dateNow()});saveDb();e.target.reset();closeModal('clientModal');});
+document.getElementById('deviceForm').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);db.devices.push({id:id(),clientId:f.get('clientId'),brand:f.get('brand').trim(),model:f.get('model').trim(),imei:f.get('imei').trim(),serial:f.get('serial').trim(),status:f.get('status')||'Activo',created:dateNow()});saveDb();e.target.reset();closeModal('deviceModal');});
+document.getElementById('creditForm').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);if(db.credits.some(c=>c.deviceId===f.get('deviceId')&&balance(c)>0)){if(!confirm('Este dispositivo ya tiene un crédito con saldo. ¿Deseas continuar?'))return;}const c={id:id(),clientId:f.get('clientId'),deviceId:f.get('deviceId'),price:+f.get('price'),down:+f.get('down'),total:+f.get('total'),frequency:f.get('frequency'),installment:+f.get('installment'),firstDue:f.get('firstDue'),count:+f.get('count'),notes:f.get('notes').trim(),created:dateNow()};db.credits.push(c);saveDb();e.target.reset();closeModal('creditModal');});
+document.getElementById('paymentForm').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target),c=credit(f.get('creditId')),amount=+f.get('amount');if(!c)return alert('Selecciona un crédito válido.');if(amount>balance(c)+0.009&&!confirm('El importe supera el saldo pendiente. ¿Registrar de todos modos?'))return;const p={id:id(),creditId:c.id,amount,date:f.get('date'),method:f.get('method'),reference:f.get('reference').trim(),notes:f.get('notes').trim(),created:new Date().toISOString()};db.payments.push(p);db.actions.push({id:id(),deviceId:c.deviceId,type:'Pago registrado',date:new Date().toISOString(),note:money(amount)});saveDb();e.target.reset();closeModal('paymentModal');showReceipt(p.id);});
+function renderAll(){renderDashboard();renderClients();renderDevices();renderCredits();renderPayments();renderRestrictions()}
+function renderDashboard(){
+ document.getElementById('statClients').textContent=db.clients.length;document.getElementById('statDevices').textContent=db.devices.length;
+ document.getElementById('statBalance').textContent=money(db.credits.reduce((s,c)=>s+balance(c),0));
+ document.getElementById('statCollected').textContent=money(db.payments.reduce((s,p)=>s+Number(p.amount),0));
+ const recent=[...db.payments].sort((a,b)=>(b.created||'').localeCompare(a.created||'')).slice(0,5);
+ document.getElementById('recentPayments').innerHTML=table(['Fecha','Cliente','Importe','Método','Recibo'],recent.map(p=>{const c=credit(p.creditId);return `<tr><td>${fmtDate(p.date)}</td><td>${esc((client(c?.clientId)||{}).name||'—')}</td><td><b>${money(p.amount)}</b></td><td>${esc(p.method)}</td><td><button class="secondary" onclick="showReceipt('${p.id}')">Ver recibo</button></td></tr>`}));
+ const att=db.credits.filter(c=>creditState(c)==='Con atraso'||balance(c)<=0.009).slice(0,6);
+ document.getElementById('attentionCredits').innerHTML=table(['Cliente','Dispositivo','Próximo vencimiento','Saldo','Estado'],att.map(c=>`<tr><td>${esc((client(c.clientId)||{}).name||'—')}</td><td>${esc((device(c.deviceId)||{}).model||'—')}</td><td>${fmtDate(dueDate(c))}</td><td>${money(balance(c))}</td><td>${pill(creditState(c))}</td></tr>`));
+}
+function renderClients(){const q=(document.getElementById('clientSearch')?.value||'').toLowerCase();const rows=db.clients.filter(c=>(c.name+' '+c.phone+' '+c.email).toLowerCase().includes(q)).map(c=>`<tr><td><b>${esc(c.name)}</b><div class="muted">${esc(c.email||'')}</div></td><td>${esc(c.phone)}</td><td>${db.credits.filter(x=>x.clientId===c.id).length}</td><td>${money(db.credits.filter(x=>x.clientId===c.id).reduce((s,x)=>s+balance(x),0))}</td><td><button class="danger" onclick="deleteClient('${c.id}')">Eliminar</button></td></tr>`);document.getElementById('clientsTable').innerHTML=table(['Cliente','Teléfono','Créditos','Saldo pendiente','Acciones'],rows)}
+function renderDevices(){const q=(document.getElementById('deviceSearch')?.value||'').toLowerCase(),st=document.getElementById('deviceStatusFilter')?.value||'';const rows=db.devices.filter(d=>((d.brand+' '+d.model+' '+d.imei+' '+((client(d.clientId)||{}).name||'')).toLowerCase().includes(q))&&(!st||d.status===st)).map(d=>`<tr><td><b>${esc(d.brand)} ${esc(d.model)}</b><div class="muted">IMEI: ${esc(d.imei||'No registrado')}</div></td><td>${esc((client(d.clientId)||{}).name||'—')}</td><td>${esc(d.serial||'—')}</td><td>${pill(d.status)}</td><td><button class="danger" onclick="deleteDevice('${d.id}')">Eliminar</button></td></tr>`);document.getElementById('devicesTable').innerHTML=table(['Dispositivo','Cliente','Serie','Estado','Acciones'],rows)}
+function renderCredits(){const q=(document.getElementById('creditSearch')?.value||'').toLowerCase(),st=document.getElementById('creditStatusFilter')?.value||'';const rows=db.credits.filter(c=>(((client(c.clientId)||{}).name||'')+' '+((device(c.deviceId)||{}).model||'')).toLowerCase().includes(q)&&(!st||creditState(c)===st)).map(c=>`<tr><td><b>${esc((client(c.clientId)||{}).name||'—')}</b><div class="muted">${esc((device(c.deviceId)||{}).brand||'')} ${esc((device(c.deviceId)||{}).model||'')}</div></td><td>${money(c.price)}</td><td>${money(c.down)}</td><td>${money(c.total)}</td><td>${money(balance(c))}</td><td>${esc(c.frequency)}<div class="muted">${money(c.installment)} × ${c.count}</div></td><td>${fmtDate(dueDate(c))}</td><td>${pill(creditState(c))}</td></tr>`);document.getElementById('creditsTable').innerHTML=table(['Cliente / equipo','Precio','Enganche','Financiado','Saldo','Plan','Próximo vencimiento','Estado'],rows)}
+function renderPayments(){const q=(document.getElementById('paymentSearch')?.value||'').toLowerCase();const rows=[...db.payments].sort((a,b)=>(b.date||'').localeCompare(a.date||'')).filter(p=>{const c=credit(p.creditId);return (((client(c?.clientId)||{}).name||'')+' '+(p.reference||'')+' '+p.method).toLowerCase().includes(q)}).map(p=>`<tr><td>${fmtDate(p.date)}</td><td>${esc((client((credit(p.creditId)||{}).clientId)||{}).name||'—')}</td><td>${esc((device((credit(p.creditId)||{}).deviceId)||{}).model||'—')}</td><td><b>${money(p.amount)}</b></td><td>${esc(p.method)}</td><td>${esc(p.reference||'—')}</td><td><button class="secondary" onclick="showReceipt('${p.id}')">Recibo</button></td></tr>`);document.getElementById('paymentsTable').innerHTML=table(['Fecha','Cliente','Equipo','Importe','Método','Referencia','Recibo'],rows)}
+function renderRestrictions(){const q=(document.getElementById('restrictionSearch')?.value||'').toLowerCase();const rows=db.devices.filter(d=>((d.brand+' '+d.model+' '+d.imei+' '+((client(d.clientId)||{}).name||'')).toLowerCase().includes(q)).map(d=>`<tr><td><b>${esc((client(d.clientId)||{}).name||'—')}</b><div class="muted">${esc((client(d.clientId)||{}).phone||'')}</div></td><td>${esc(d.brand)} ${esc(d.model)}<div class="muted">IMEI: ${esc(d.imei||'—')}</div></td><td>${pill(d.status)}</td><td><div class="row-actions"><button class="danger" onclick="setDeviceStatus('${d.id}','Restringido (registro)')">Marcar restringido</button><button class="secondary" onclick="setDeviceStatus('${d.id}','Activo')">Marcar activo</button><button class="neutral" onclick="setDeviceStatus('${d.id}','Pendiente de revisión')">Revisión</button></div></td></tr>`));document.getElementById('restrictionsTable').innerHTML=table(['Cliente','Dispositivo','Estado registrado','Acciones manuales'],rows)}
+function setDeviceStatus(id,status){const d=device(id);if(!d)return;const msg=status==='Restringido (registro)'?'Esto solo cambiará el estado interno de KEYPHONE; no bloqueará físicamente el teléfono. ¿Continuar?':status==='Activo'?'Esto solo cambiará el estado interno de KEYPHONE; no desbloqueará físicamente el teléfono. ¿Continuar?':'¿Marcar el equipo como pendiente de revisión?';if(!confirm(msg))return;d.status=status;db.actions.push({id:id(),deviceId:id,type:status,date:new Date().toISOString(),note:'Cambio manual de estado administrativo'});saveDb()}
+function deleteClient(cid){if(db.devices.some(d=>d.clientId===cid)||db.credits.some(c=>c.clientId===cid))return alert('No se puede eliminar: el cliente tiene dispositivos o créditos relacionados.');if(confirm('¿Eliminar este cliente?')){db.clients=db.clients.filter(c=>c.id!==cid);saveDb()}}
+function deleteDevice(did){if(db.credits.some(c=>c.deviceId===did))return alert('No se puede eliminar: el dispositivo tiene un crédito relacionado.');if(confirm('¿Eliminar este dispositivo?')){db.devices=db.devices.filter(d=>d.id!==did);saveDb()}}
+function showReceipt(pid){const p=db.payments.find(x=>x.id===pid);if(!p)return;const c=credit(p.creditId),cl=client(c?.clientId),d=device(c?.deviceId);document.getElementById('receiptBody').innerHTML=`<div style="border:1px dashed #98a2b3;border-radius:12px;padding:20px"><div style="display:flex;justify-content:space-between;gap:12px"><div><h2 style="margin:0;letter-spacing:1px">KEYPHONE</h2><p class="muted" style="margin:4px 0 18px">Comprobante de pago</p></div><b>${esc(p.id.slice(-7).toUpperCase())}</b></div><p><b>Cliente:</b> ${esc(cl?.name||'—')}</p><p><b>Teléfono:</b> ${esc(cl?.phone||'—')}</p><p><b>Equipo:</b> ${esc((d?.brand||'')+' '+(d?.model||''))}</p><hr style="border:0;border-top:1px solid #e4e7ec"><p><b>Fecha:</b> ${fmtDate(p.date)}</p><p><b>Método:</b> ${esc(p.method)}</p><p><b>Referencia:</b> ${esc(p.reference||'—')}</p><h2 style="font-size:28px">${money(p.amount)}</h2><p><b>Saldo pendiente:</b> ${money(c?balance(c):0)}</p><p class="muted" style="font-size:12px">Conserva este comprobante. Este recibo es generado por el registro interno de KEYPHONE.</p></div>`;openModal('receiptModal')}
+function exportData(){const blob=new Blob([JSON.stringify({app:'KEYPHONE',version:1,exportedAt:new Date().toISOString(),data:db},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='keyphone-respaldo-'+dateNow()+'.json';a.click();URL.revokeObjectURL(a.href)}
+function importData(){const file=document.getElementById('importFile').files[0];if(!file)return alert('Selecciona un archivo JSON.');const r=new FileReader();r.onload=()=>{try{const x=JSON.parse(r.result),d=x.data||x;if(!Array.isArray(d.clients)||!Array.isArray(d.devices)||!Array.isArray(d.credits)||!Array.isArray(d.payments))throw Error('Formato');if(!confirm('Esto reemplazará los datos actuales. ¿Continuar?'))return;db=d;saveDb();alert('Respaldo importado.')}catch(e){alert('No se pudo importar. Verifica que sea un respaldo KEYPHONE válido.')}};r.readAsText(file)}
+function clearData(){if(confirm('¿Borrar todos los clientes, dispositivos, créditos y pagos de este navegador? Esta acción no se puede deshacer.')){db=emptyDb();saveDb()}}
+renderAll();
+</script>
+</body>
+</html>
